@@ -2,7 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "simple gcc",
+      "name": "simple gcc active file",
       "type": "cppdbg",
       "request": "launch",
       "program": "${fileDirname}/${fileBasenameNoExtension}",
@@ -10,9 +10,22 @@
       "stopAtEntry": false,
       "cwd": "${fileDirname}",
       "environment": [],
-      "internalConsoleOptions": "neverOpen",
+      "externalConsole": true,
       "MIMode": "lldb",
       "preLaunchTask": "build with gcc"
+    },
+    {
+      "name": "build and debug active file",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${fileDirname}/${fileBasenameNoExtension}",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "${fileDirname}",
+      "environment": [],
+      "MIMode": "lldb",
+      "preLaunchTask": "C/C++: gcc-13 build active file"
     }
   ]
 }
