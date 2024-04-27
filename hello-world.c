@@ -3,7 +3,8 @@
 
 int main(void)
 {
-  int a = 0;
-  printf("Hello World! %d\n", a);
-  return 1;
+  char *world = "World";
+  printf("Hello %s!\n", world);
+
+  return EXIT_FAILURE;
 }
