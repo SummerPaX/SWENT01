@@ -2,7 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "simple gcc active file",
+      "name": "gcc.exe - Build and debug active file",
       "type": "cppdbg",
       "request": "launch",
       "program": "${fileDirname}/${fileBasenameNoExtension}",
@@ -10,22 +10,17 @@
       "stopAtEntry": false,
       "cwd": "${fileDirname}",
       "environment": [],
-      "externalConsole": true,
-      "MIMode": "lldb",
-      "preLaunchTask": "build with gcc"
-    },
-    {
-      "name": "build and debug active file",
-      "type": "cppdbg",
-      "request": "launch",
-      "program": "${fileDirname}/${fileBasenameNoExtension}",
-      "args": [],
-      "stopAtEntry": false,
-      "externalConsole": true,
-      "cwd": "${fileDirname}",
-      "environment": [],
-      "MIMode": "lldb",
-      "preLaunchTask": "C/C++: gcc-13 build active file"
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "C/C++: gcc.exe build active file"
     }
   ]
 }
