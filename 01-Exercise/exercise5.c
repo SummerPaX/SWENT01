@@ -2,20 +2,18 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-char *line(char border, int length)
+void printChars(char border, int length)
 {
-  char *line = malloc(length);
-
   for (int i = 0; i < length - 1; i++)
   {
-    line[i] = border;
+    printf("%c", border);
   }
-  line[length - 1] = '\n';
+  printf("\n");
 
-  return line;
+  return;
 }
 
-char *textLine(char *text, char border, int length)
+void printTextLine(char *text, char border, int length)
 {
   char *line = malloc(length);
 
@@ -42,26 +40,28 @@ char *textLine(char *text, char border, int length)
   line[length - 2] = border;
   line[length - 1] = '\n';
 
-  return line;
+  printf("%s", line);
+  free(line);
+
+  return;
 }
 
 void printTextBlock(char *text[], char border, int length)
 {
-
-  printf("%s", line(border, length));
+  printChars(border, length);
   for (int i = 0; text[i] != NULL; i++)
   {
-    printf("%s", textLine(text[i], border, length));
+    printTextLine(text[i], border, length);
   }
-  printf("%s", line(border, length));
+  printChars(border, length);
 }
 
 int main(void)
 {
   char *text[] = {"SWENT2024 Class 1", "Paulus Summer", "52303789", NULL};
   printTextBlock(text, '*', 30);
-  printTextBlock(text, '#', 25);
-  printTextBlock(text, '>', 40);
+  // printTextBlock(text, '#', 25);
+  // printTextBlock(text, '>', 40);
 
   return EXIT_SUCCESS;
 }
