@@ -1,8 +1,6 @@
 #include <stdio.h>
 
-int main(void)
-{
-
+int main(void) {
   int birthDay, birthMonth, birthYear;
   printf("Enter the day of birth: ");
   scanf("%d", &birthDay);
@@ -18,8 +16,7 @@ int main(void)
   printf("Exercise day = %d.%d.%d\n", exerciseDay, exerciseMonth, exerciseYear);
 
   int daysFromBirthToExercise =
-      (exerciseYear * 360 + exerciseMonth * 30 + exerciseDay) -
-      (birthYear * 360 + birthMonth * 30 + birthDay);
+      (exerciseYear * 360 + exerciseMonth * 30 + exerciseDay) - (birthYear * 360 + birthMonth * 30 + birthDay);
 
   printf("Days from birth to exercise: %d\n", daysFromBirthToExercise);
 

@@ -1,8 +1,7 @@
-#include <stdio.h>
 #include <math.h>
+#include <stdio.h>
 
-int main(void)
-{
+int main(void) {
   long double x, y, z;
 
   printf("Enter the x coordinate: ");

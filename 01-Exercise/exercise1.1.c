@@ -1,7 +1,6 @@
 #include <stdio.h>
 
-int main(void)
-{
+int main(void) {
   char *world = "World";
   printf("Hello %s!\n", world);
 

@@ -1,26 +1,21 @@
 #include <stdio.h>
-#include <stdlib.h>
 
-double recalculate(int ingredient, double portions)
-{
-  return (ingredient / 4) * portions;
-}
+double recalculate(int ingredient, double portions) { return (ingredient / 4.0) * portions; }
 
-int main(void)
-{
+int main(void) {
   double portions;
 
   printf("How many portions do you want: ");
   scanf("%lf", &portions);
 
   // Marmorgugelhupf for 4 Portions
-  int Flour = 250;        // Gramm
-  int Sugar = 125;        // Gramm
-  int Icing_Sugar = 125;  // Gramm
-  int Butter = 250;       // Gramm
-  int Eggs = 4;           // Pieces
-  int Salt = 3;           // Gramm
-  int Baking_powder = 10; // Gramm
+  int Flour = 250;         // Gramm
+  int Sugar = 125;         // Gramm
+  int Icing_Sugar = 125;   // Gramm
+  int Butter = 250;        // Gramm
+  int Eggs = 4;            // Pieces
+  int Salt = 3;            // Gramm
+  int Baking_powder = 10;  // Gramm
   //...
 
   printf("Recipe for %.2lf Portions of Marmorgugelhupf: \n", portions);

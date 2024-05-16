@@ -1,7 +1,6 @@
 #include <stdio.h>
 
-int main(void)
-{
+int main(void) {
   long double width, length, height;
 
   printf("Enter the width of the cube: ");
@@ -13,9 +12,9 @@ int main(void)
   printf("Enter the height of the cube: ");
   scanf("%Lf", &height);
 
-  double area = 2 * (width * length + width * height + length * height);
-  double perimeter = 4 * (width + length + height);
-  double volume = width * length * height;
+  long double area = 2 * (width * length + width * height + length * height);
+  long double perimeter = 4 * (width + length + height);
+  long double volume = width * length * height;
 
   printf("Area: %Lf\n", area);
   printf("Perimeter: %Lf\n", perimeter);

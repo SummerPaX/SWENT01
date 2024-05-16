@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-int main(void)
-{
+
+int main(void) {
   int zipCode = 1200;
   printf("My Zip number is: %d\n", zipCode);
   printf("Hello World\n");

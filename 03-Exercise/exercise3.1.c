@@ -1,15 +1,12 @@
 #include <stdio.h>
 
-typedef struct Birthday
-{
+typedef struct Birthday {
   int day;
   int month;
   int year;
 } Birthday;
 
-int main(void)
-{
-
+int main(void) {
   Birthday bday;
   printf("Enter the day of birth: ");
   scanf("%d", &bday.day);
@@ -25,8 +22,7 @@ int main(void)
   printf("Exercise day = %d.%d.%d\n", exerciseDay, exerciseMonth, exerciseYear);
 
   int daysFromBirthToExercise =
-      (exerciseYear * 360 + exerciseMonth * 30 + exerciseDay) -
-      (bday.year * 360 + bday.month * 30 + bday.day);
+      (exerciseYear * 360 + exerciseMonth * 30 + exerciseDay) - (bday.year * 360 + bday.month * 30 + bday.day);
 
   printf("Days from birth to exercise: %d\n", daysFromBirthToExercise);
 

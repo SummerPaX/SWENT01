@@ -2,21 +2,18 @@
 #include <stdlib.h>
 
 // from the internet
-void printBinary(unsigned char num)
-{
-  for (int bit = 7; bit >= 0; bit--)
-  {
+void printBinary(unsigned char num) {
+  for (int bit = 7; bit >= 0; bit--) {
     printf("%d", (num >> bit) & 1);
   }
   printf("\n");
 }
 
-int main(void)
-{
+int main(void) {
   unsigned char byte;
 
   printf("Input a number between 0 - 255: ");
-  scanf("%u", &byte);
+  scanf("%u", (uint*) &byte);
 
   printf("\nINPUT  ");
   printBinary(byte);

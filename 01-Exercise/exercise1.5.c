@@ -1,11 +1,9 @@
-#include <stdio.h>
 #include <stdbool.h>
+#include <stdio.h>
 #include <stdlib.h>
 
-void printChars(char border, int length)
-{
-  for (int i = 0; i < length - 1; i++)
-  {
+void printChars(char border, int length) {
+  for (int i = 0; i < length - 1; i++) {
     printf("%c", border);
   }
   printf("\n");
@@ -13,27 +11,21 @@ void printChars(char border, int length)
   return;
 }
 
-void printTextLine(char *text, char border, int length)
-{
+void printTextLine(char *text, char border, int length) {
   char *line = malloc(length);
 
   // get the length of the text
   int textLength = 0;
-  while (text[textLength] != '\0')
-  {
+  while (text[textLength] != '\0') {
     textLength++;
   }
 
   // create the line
   line[0] = border;
-  for (int i = 1; i < length - 2; i++)
-  {
-    if (i <= ((length - 3) - textLength) / 2 || i > ((length - 3) + textLength) / 2)
-    {
+  for (int i = 1; i < length - 2; i++) {
+    if (i <= ((length - 3) - textLength) / 2 || i > ((length - 3) + textLength) / 2) {
       line[i] = ' ';
-    }
-    else
-    {
+    } else {
       line[i] = text[i - ((length - 3) - textLength) / 2 - 1];
     }
   }
@@ -46,18 +38,15 @@ void printTextLine(char *text, char border, int length)
   return;
 }
 
-void printTextBlock(char *text[], char border, int length)
-{
+void printTextBlock(char *text[], char border, int length) {
   printChars(border, length);
-  for (int i = 0; text[i] != NULL; i++)
-  {
+  for (int i = 0; text[i] != NULL; i++) {
     printTextLine(text[i], border, length);
   }
   printChars(border, length);
 }
 
-int main(void)
-{
+int main(void) {
   char *text[] = {"SWENT2024 Class 1", "Paulus Summer", "52303789", NULL};
   printTextBlock(text, '*', 30);
   // printTextBlock(text, '#', 25);
