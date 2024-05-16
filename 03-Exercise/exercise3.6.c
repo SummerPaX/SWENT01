@@ -7,7 +7,7 @@ int main() {
   int count = 0;
   double mean = 0;
   int input;
-  char exitChar;
+  char exitChar = '\n';
 
   printf("Enter at least %d Numbers and calculate mean.\n", MIN_NUMBERS);
   printf("Enter q to exit the Loop and calculate result.\n\n");

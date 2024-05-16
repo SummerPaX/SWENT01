@@ -2,22 +2,24 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Build and debug active C/C++ file",
+      "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${fileDirname}/${fileBasenameNoExtension}",
       "args": [],
       "stopAtEntry": false,
-      "cwd": "${fileDirname}",
-      "environment": [],
-      "externalConsole": false,
+      "linux": {
+        "externalConsole": false,
+      },
       "windows": {
-        "MIMode": "gdb",
-        "miDebuggerPath": "gdb",
+        "externalConsole": false,
       },
       "osx": {
-        "MIMode": "lldb"
+        "externalConsole": true
       },
+      "cwd": "${fileDirname}",
+      "program": "${fileDirname}/${fileBasenameNoExtension}",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
       "setupCommands": [
         {
           "description": "Enable pretty-printing for gdb",
@@ -25,7 +27,7 @@
           "ignoreFailures": true
         }
       ],
-      "preLaunchTask": "gcc.exe build active file"
+      "preLaunchTask": "gcc build active file"
     }
   ]
 }
