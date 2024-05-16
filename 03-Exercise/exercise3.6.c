@@ -1,41 +1,43 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
 
 #define MIN_NUMBERS 5
-#define MAX_NUMBERS 20
 
 int main()
 {
-  int numbers[MAX_NUMBERS];
   int count = 0;
   double mean = 0;
   int input;
+  char exitChar;
 
-  printf("Enter between %d and %d Numbers and calculate mean.\n", MIN_NUMBERS, MAX_NUMBERS);
-  printf("Enter -1 to exit the Loop and calculate result.\n\n");
+  printf("Enter at least %d Numbers and calculate mean.\n", MIN_NUMBERS);
+  printf("Enter q to exit the Loop and calculate result.\n\n");
 
-  for (; count < 20; count++)
+  while(true)
   {
-    printf("Number %d:", count + 1);
-    scanf("%d", &input);
-
-    if (input == -1)
-    {
-      if (count >= MIN_NUMBERS)
-      {
-        break;
-      }
-
-      count--;
-      printf("Insufficient number of integers. Please enter at least %d integers.\n", MIN_NUMBERS);
-      continue;
+    if(exitChar != ','){
+      printf("Number %d: ", count + 1);
     }
 
-    numbers[count] = input;
-  }
+    if(scanf(" %d", &input) != 0) {
+      mean += input;
+      count++;
+    }
+    
+    do {
+      exitChar = getchar();
+      if(exitChar == ','){
+        break;
+      }
+    } while(exitChar != '\n' && exitChar != 'q');
+    
+    if(exitChar == 'q'){
+      if (count >= MIN_NUMBERS) { break; }
 
-  for (int i = 0; i < count; i++)
-  {
-    mean += numbers[i];
+      printf("Insufficient number of integers. Please enter at least %d integers.\n", MIN_NUMBERS);
+      while(getchar() != '\n');
+    }
   }
 
   mean = mean / count;
