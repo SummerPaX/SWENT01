@@ -11,6 +11,6 @@ int main()
     unsigned char decryptedChar = encryptedMessage[i] - key;
     printf("%c", decryptedChar);
   }
-
+  printf("\n");
   return 0;
 }
