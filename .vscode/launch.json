@@ -9,17 +9,20 @@
       "stopAtEntry": false,
       "linux": {
         "externalConsole": false,
+        "MIMode": "gdb",
+        "miDebuggerPath": "gdb",
       },
       "windows": {
         "externalConsole": false,
+        "MIMode": "gdb",
+        "miDebuggerPath": "gdb",
       },
       "osx": {
-        "externalConsole": true
+        "externalConsole": true,
+        "MIMode": "lldb",
       },
       "cwd": "${fileDirname}",
       "program": "${fileDirname}/${fileBasenameNoExtension}",
-      "MIMode": "gdb",
-      "miDebuggerPath": "gdb",
       "setupCommands": [
         {
           "description": "Enable pretty-printing for gdb",
