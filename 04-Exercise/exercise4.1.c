@@ -1,3 +1,4 @@
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -8,12 +9,12 @@ int inputGuess(int randInt) {
   scanf("%d", &guess);
 
   if (guess == randInt) {
-    return 1;
+    return true;
   }
 
-  printf("The sought number is %s!\n", (guess > randInt) ? "greater" : "smaller");
+  printf("The sought number is %s!\n", (guess > randInt) ? "smaller" : "greater");
 
-  return 0;
+  return false;
 }
 
 int main(void) {
@@ -22,9 +23,9 @@ int main(void) {
   int randInt = rand() % 100;
   int count;
 
-  for (count = 1; inputGuess(randInt) != 1; count++);
+  for (count = 1; inputGuess(randInt) == false; count++);
 
-  printf("\nCongratulations, you have found the sought number in %d tries!", count);
+  printf("\nCongratulations, you have found the sought number in %d tries!\n\n", count);
 
   return 0;
 }

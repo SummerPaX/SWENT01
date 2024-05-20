@@ -3,14 +3,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define uint16 unsigned short int
+typedef unsigned short int uint16;
 
-bool isPrimeNumber(int number) {
+bool isPrimeNumber(uint16 number) {
   if (number % 2 == 0) {
     return number == 2;
   }
 
-  for (uint16 divisor = 3; divisor < number / 3; divisor += 2) {
+  for (uint16 divisor = 3; divisor <= number / 3; divisor += 2) {
     if (number % divisor == 0) {
       return false;
     }
@@ -22,7 +22,7 @@ bool isPrimeNumber(int number) {
 int main(void) {
   uint16 counter = 0;
 
-  printf("---------CALCULATING PRIMES---------");
+  printf("------------CALCULATING PRIMES------------");
 
   // 1 is not a Prime Number
   // 2 is the only even Prime Number (we can check it manually)
@@ -41,5 +41,5 @@ int main(void) {
   }
 
   // Clear last line
-  printf("----------------DONE----------------");
+  printf("-------------------DONE-------------------");
 }
