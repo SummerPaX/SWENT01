@@ -13,7 +13,7 @@ int main(void) {
   unsigned char byte;
 
   printf("Input a number between 0 - 255: ");
-  scanf("%u", (uint*) &byte);
+  scanf("%u", (int*)&byte);
 
   printf("\nINPUT  ");
   printBinary(byte);
