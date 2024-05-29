@@ -1,7 +1,4 @@
-#include <stdbool.h>
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
 
 int main(void) {
   int numbers[50];
@@ -30,4 +27,6 @@ int main(void) {
     i++;
   }
   printf("\n");
+
+  return 0;
 }

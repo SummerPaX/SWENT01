@@ -1,8 +1,5 @@
-#include <math.h>
-#include <stdbool.h>
 #include <stdio.h>
 
-// Struct for describing a product
 struct Product {
   int ID;
   char name[100];
@@ -41,7 +38,6 @@ int readProducts(struct Product *shoppingCart, int maxProducts) {
 
 void outputProducts(struct Product *shoppingCart, int numProducts) {
   printf("\n┌ Shopping Cart\n");
-  printf("├─ ");
   for (int i = 0; i < numProducts; i++) {
     printf("├─ Product %d\n", i + 1);
     printf("│ ID: %d\n", shoppingCart[i].ID);

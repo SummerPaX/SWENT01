@@ -1,6 +1,4 @@
-#include <stdbool.h>
 #include <stdio.h>
-#include <string.h>
 
 #define MAX_LENGTH 100
 
@@ -17,7 +15,7 @@ int main() {
   printf("Enter a new character: ");
   scanf(" %c", &newChar);
 
-  for (int i = 0; i < strlen(word); i++) {
+  for (int i = 0; word[i] != '\0'; i++) {
     if (word[i] == replaceChar) {
       word[i] = newChar;
     }

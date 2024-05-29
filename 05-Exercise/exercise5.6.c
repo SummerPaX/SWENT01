@@ -20,11 +20,11 @@ int main() {
   struct elementStruct* current_element = &first;
   while (current_element != NULL) {
     printf("Id: %d, Name: %s\n", current_element->ID, current_element->name);
-    current_element = current_element->next_element;
 
-    if (current_element == &first) {
+    if (current_element->next_element == &first) {
       break;
     }
+    current_element = current_element->next_element;
   }
 
   return 0;
