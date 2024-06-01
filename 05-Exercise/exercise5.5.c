@@ -7,6 +7,8 @@ struct Product {
   double price;
 };
 
+void flushBuffer() { while (getchar() != '\n'); }
+
 int readProducts(struct Product *shoppingCart, int maxProducts) {
   int numProducts = 0;
 
@@ -28,6 +30,8 @@ int readProducts(struct Product *shoppingCart, int maxProducts) {
     char choice;
     printf("Do you want to enter another product? (y/n) ");
     scanf(" %c", &choice);
+
+    flushBuffer();
     if (choice != 'y') {
       break;
     }
