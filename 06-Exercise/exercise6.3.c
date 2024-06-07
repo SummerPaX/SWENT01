@@ -11,30 +11,36 @@ int main() {
   srand(time(NULL));
 
   for (int i = 0; i < 20; i++) {
-    for (int j = 0; j < 5; j++) array[i][j] = rand();
+    for (int j = 0; j < 5; j++) {
+      array[i][j] = rand() % 100;
+    }
   }
 
   for (int i = 0; i < 20; i++) {
     sum_sub(array[i], 5, &sum[i]);
   }
 
-  printf("array_2D[20][5] = \n{");
+  printf("array_2D[20][5] = \n{\n");
   for (int i = 0; i < 20; i++) {
-    printf("{");
+    printf("  {");
     for (int j = 0; j < 5; j++) {
-      printf(" %d", array[i][j]);
-      if (j < 4) printf(", \t");
+      printf(" % 3d", array[i][j]);
     }
-    printf(" }");
-    if (i < 19) printf(",\n ");
+    printf("  }");
+    if (i < 19) {
+      printf(",\n");
+    }
   }
-  printf("}\n");
+  printf("\n}\n");
 
-  printf("array_1D[20] = {");
+  printf("array_1D[20] = \n{\n");
   for (int i = 0; i < 20; i++) {
-    printf(" %ld", sum[i]);
+    printf(" % 4ld", sum[i]);
+    if (i % 5 == 4) {
+      printf("\n");
+    }
   }
-  printf(" }\n\n");
+  printf("}\n\n");
 
   return 0;
 }

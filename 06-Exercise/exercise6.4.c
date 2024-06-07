@@ -18,7 +18,6 @@ int main() {
   item items[2][50];
   int n_items;
   int n_smaller_items = 0;
-  bool finished_sort = false;
 
   n_items = read_in_items(items[0]);
 
@@ -35,40 +34,46 @@ int main() {
     n_smaller_items = 0;
   }
 
-  printf("Items unsorted: \n");
-  print_items(items[0], n_items);
+  printf("\nPrint items in sorted order? (y/n):");
 
-  printf("\nItems sorted: \n");
-  print_items(items[1], n_items);
+  if (getchar() == 'y') {
+    printf("\nItems sorted: \n");
+    print_items(items[1], n_items);
+  } else {
+    printf("Items unsorted: \n");
+    print_items(items[0], n_items);
+  }
 
   return 0;
 }
 
 int read_in_items(item items[]) {
   for (int i = 0; i < 50; i++) {
-    printf("\nItem %d ID:", i + 1);
+    printf("Item %d ID:", i + 1);
     scanf(" %d", &items[i].ID);
 
-    printf("\nItem %d name (10 char max.): ", i + 1);
+    printf("Item %d name (10 char max.): ", i + 1);
     scanf(" %10s", items[i].name);
 
-    while (getchar() != '\n');
-
-    printf("\nItem %d price:", i + 1);
+    printf("Item %d price:", i + 1);
     scanf(" %f", &items[i].price);
 
+    printf("Do you want to enter another item? (y/n):");
+
     while (getchar() != '\n');
-
-    printf("\nDo you want to enter another item? (y/n):");
-
-    if (getchar() != 'y') return i + 1;
+    if (getchar() != 'y') {
+      while (getchar() != '\n');
+      return i + 1;
+    }
   }
 
   return 50;
 }
 
 void print_items(item items[], int n_items) {
+  printf("ID\tName\t\tPrice\n");
+  printf("----------------------------------\n");
   for (int i = 0; i < n_items; i++) {
-    printf("ID: %d\t\tname: %s\t\tprice: %.2f€\n", items[i].ID, items[i].name, items[i].price);
+    printf("%d\t%s\t\t%.2f€\n", items[i].ID, items[i].name, items[i].price);
   }
 }
