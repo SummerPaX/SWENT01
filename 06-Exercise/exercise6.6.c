@@ -21,6 +21,7 @@ int main(void) {
   printf("Enter new diary entries (press Ctrl+D to finish):\n");
   while (fgets(line, 100, stdin) != NULL) {
     fprintf(diaryFile, "%s: %s", time_buffer, line);
+    fflush(diaryFile);
   }
 
   fclose(diaryFile);

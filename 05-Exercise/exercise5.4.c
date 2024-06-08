@@ -33,5 +33,5 @@ int main(void) {
   printf("Address -> floating entry (via pointer): %p", &(myStructPointer->floating));
   printf(" | Value: %lf\n", myStructPointer->floating);
 
-    return 0;
+  return 0;
 }
